@@ -1,0 +1,13 @@
+// out: ../css/main.css
+// You can use the "Easy Compile" VS Code extension to easily compile the scss files https://marketplace.visualstudio.com/items?itemName=refgd.easy-compile
+
+@use './_variables';
+@use './layouts/_general';
+@use './layouts/_header';
+@use './layouts/_navmenu';
+@use './layouts/_footer';
+@use './layouts/_preloader';
+@use './layouts/_scrolltop';
+@use './layouts/_aos';
+@use './layouts/_page-titles';
+@use './_sections';

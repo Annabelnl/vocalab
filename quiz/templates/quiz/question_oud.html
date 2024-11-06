@@ -1,0 +1,47 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz/css/style.css' %}">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Répondez aux questions suivantes :</h1>
+
+
+    <form action="{% url 'quiz:verifier_reponse' %}" method="post">
+
+
+        {% csrf_token %}
+
+        {% if questions %}
+            {% for question in questions %}
+                <div style="margin-bottom: 20px;">
+                    <p><strong>Question {{ forloop.counter }}:</strong> {{ question.phrase }}</p>
+                    <p><strong>Mot cible :</strong> {{ question.mot_cible }}</p>
+                    
+                    {% for option in question.options %}
+                        <div>
+                            <input type="radio" id="reponse_{{ question.id }}_{{ forloop.counter }}" 
+                                   name="reponse_{{ question.id }}" value="{{ option }}">
+                            <label for="reponse_{{ question.id }}_{{ forloop.counter }}">{{ option }}</label>
+                        </div>
+                    {% endfor %}
+                    
+                    <input type="hidden" name="question_ids" value="{{ question.id }}">
+                    <button type="button" onclick="showHint({{ question.id }})">Afficher le hint</button>
+                    <p id="hint_{{ question.id }}" style="display: none;"><strong>Hint :</strong> {{ question.hint }}</p>
+                </div>
+            {% endfor %}
+            <button type="submit">Valider les réponses</button>
+        {% else %}
+            <p>Aucune question n'est disponible pour le moment.</p>
+        {% endif %}
+    </form>
+
+    <script src="{% static 'quiz/quiz.js' %}"></script> 
+</body>
+</html>

@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'quiz/css/style.css' %}">
+
+    <title>Résultats du Quiz</title>
+</head>
+<body>
+    <h1>Résultats du Quiz</h1>
+    <p>Score : {{ score }} / {{ total_questions }}</p>
+    <p>Pourcentage de réussite : {{ pourcentage }}%</p>
+
+    {% if erreurs %}
+        <h2>Erreurs</h2>
+        <ul>
+            {% for erreur in erreurs %}
+                <li>{{ erreur.mot_cible }} (réponse correcte : {{ erreur.reponse_correcte }})</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+    <p><a href="{% url 'quiz:afficher_question' %}">Refaire le quiz</a></p>
+</body>
+</html>

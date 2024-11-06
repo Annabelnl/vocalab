@@ -1,0 +1,75 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VocaLab</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+
+<body>
+    <!-- Header Sectie -->
+    <header>
+        <div class="header-container">
+            <div class="banner">
+                <img src="{% static 'images/logo_vocalab.jpg' %}" alt="VocaLab Logo">
+                <h1>Welkom bij VocaLab</h1>
+                <p>Leer woordenschat op een interactieve en efficiënte manier in meerdere talen.</p>
+                <a href="{% url 'quiz:afficher_question' %}" class="cta-button">Gratis Test</a>
+            </div>
+            <button class="cta-button">Login</button>
+        </div>
+            <h1>Welkom bij VocaLab</h1>
+            <p>Leer woordenschat op een interactieve en efficiënte manier in meerdere talen.</p>
+        </div>
+        <meta name="google-site-verification" content="4HSXBn_FybkiVz_3e0UvSs-wcS_92BPOTKIF4jwXQBk" />
+    </header>
+    
+    <!-- Functionaliteiten Sectie -->
+    <section class="features">
+        <h2>Onze Functionaliteiten</h2>
+        <div class="feature">
+            <h3>Wat is VocaLab?</h3>
+            <p>Altijd moeite gehad om vocabulaire te onthouden? Is je woordenschat heel beperkt in het Frans, Duits of Engels? Deze site is voor jou! Ontdek een slimme manier om je woordenschat écht te verbeteren zodat je betere cijfers kunt halen en met meer zelfvertrouwen kunt communiceren.</p>
+        </div>
+        <div class="feature">
+            <h3>Leren per Thema en Niveau's</h3>
+            <p>Onze quizzen zijn ingedeeld per niveau en thema, waardoor je stap voor stap je woordenschat kunt uitbreiden. Leer woorden in context, per categorieën (zoals de woorden die lijken op het Nederlands), en maak het proces leuker met slimme herhalingen. Onze applicatie ondersteunt je bij het leren als je leerling of student bent én zorgt ervoor dat je kennis blijvend is. Verleg je grenzen en leer slimmer, niet harder!</p>
+        </div>
+        <div class="feature">
+            <h3>Voortgang Bijhouden</h3>
+            <p>Volg je vooruitgang en verbeter je scores met gedetailleerde statistieken. Houd je successen bij, ontdek waar je nog kunt groeien en blijf gemotiveerd met inzichtelijke rapporten!</p>
+        </div>
+        
+    </section>
+
+    <!-- Call to Action Sectie -->
+    <section class="cta-section">
+        <h2>Word vandaag nog lid van VocaLab!</h2>
+        <p>Breid je woordenschat uit en bereik je taaldoelen.</p>
+        <a href="{% url 'signup' %}" class="cta-button">Meld je aan</a>
+    </section>
+
+    <!-- Footer Sectie -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="/" class="footer-link">Home</a> |
+            <a href="/about" class="footer-link">Over Ons</a> |
+            <a href="/contact" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
+            <a href="/services" style="color: #fff; text-decoration: none; margin: 0 10px;">Diensten</a>
+        </div>
+
+        <div class="trust-logo" class="trust-logo">
+            <img src="/static/images/positivessl_trust_seal_sm_124x32.png" alt="PositiveSSL TrustLogo" />
+        </div>
+
+        <div class="footer-copy">
+            &copy; 2024 VocaLab. Alle rechten voorbehouden.
+        </div>
+    </footer>
+    <script src="{% static 'js/vocalab_interactions.js' %}"></script>
+</body>
+</html>

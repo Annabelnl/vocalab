@@ -1,0 +1,84 @@
+// Assurez-vous que toutes les directives @use sont au début du fichier
+@use './sections/_hero' as hero;
+@use './sections/_clients' as clients;
+@use './sections/_about' as about;
+@use './sections/_why-us' as whyUs;
+@use './sections/_skills' as skills;
+@use './sections/_services' as services;
+@use './sections/_call-to-action' as callToAction;
+@use './sections/_portfolio' as portfolio;
+@use './sections/_team' as team;
+@use './sections/_pricing' as pricing;
+@use './sections/_testimonials' as testimonials;
+@use './sections/_faq-2' as faq;
+@use './sections/_contact' as contact;
+@use './sections/_portfolio-details' as portfolioDetails;
+@use './sections/_service-details' as serviceDetails;
+@use './sections/_starter-section' as starterSection;
+
+/*--------------------------------------------------------------
+# Global Sections
+--------------------------------------------------------------*/
+section,
+.section {
+  color: var(--default-color);
+  background-color: var(--background-color);
+  padding: 60px 0;
+  scroll-margin-top: 88px;
+  overflow: clip;
+}
+
+@media (max-width: 1199px) {
+  section,
+  .section {
+    scroll-margin-top: 66px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Global Section Titles
+--------------------------------------------------------------*/
+.section-title {
+  text-align: center;
+  padding-bottom: 60px;
+  position: relative;
+
+  h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    text-transform: uppercase;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 160px;
+      height: 1px;
+      background: color-mix(in srgb, var(--default-color), transparent 60%);
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      margin: auto;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-color);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+}

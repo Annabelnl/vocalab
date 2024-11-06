@@ -1,0 +1,26 @@
+// main: ../main.scss
+/*--------------------------------------------------------------
+# Clients Section
+--------------------------------------------------------------*/
+.clients {
+  padding: 12px 0;
+
+  .swiper {
+    padding: 10px 0;
+  }
+
+  .swiper-wrapper {
+    height: auto;
+  }
+
+  .swiper-slide {
+    img {
+      transition: 0.3s;
+      padding: 0 10px;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Créer un compte</h2>
+        <form method="post" action="{% url 'account_signup' %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <!-- Exemple de champs générés automatiquement par {{ form.as_p }} :
+            1. Nom d'utilisateur (username)
+            2. Adresse email
+            3. Mot de passe
+            4. Prénom (first_name) et Nom (last_name)
+            -->
+
+            <!-- Ajout de champs personnalisés si nécessaire -->
+            <div>
+                <label for="newsletter">S'abonner à la newsletter :</label>
+                <input type="checkbox" id="newsletter" name="newsletter">
+            </div>
+
+            <button type="submit">S'inscrire</button>
+        </form>
+
+        <p>Vous avez déjà un compte whalala? <a href="{% url 'account_login' %}">Connectez-vous ici</a>.</p>
+    </div>
+</body>
+</html>
